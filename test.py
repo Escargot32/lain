@@ -45,7 +45,11 @@ def test_handle(event):
     if(sent_text == "Hello"):
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text="World!")
+            TextSendMessage(text="Hi!")
+        )
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="Hello World!")
         )
 
 
