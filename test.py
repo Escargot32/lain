@@ -39,6 +39,15 @@ def handle_message(event):
         event.reply_token,
         TextSendMessage(text=event.message.text))
 
+@handler.add(MessageEvent, message=TextMessage)
+def test_handle(event):
+    sent_text = event.message.text
+    if(sent_text == "Hello"):
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="World!")
+        )
+
 
 if __name__ == "__main__":
 
